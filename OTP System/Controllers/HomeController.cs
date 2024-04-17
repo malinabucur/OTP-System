@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EntityFramework;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OTP_System.Models;
 using System.Diagnostics;
 
@@ -7,14 +9,17 @@ namespace OTP_System.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly OtpsystemContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, OtpsystemContext otpsystemContext)
         {
             _logger = logger;
+            _context = otpsystemContext;
         }
 
         public IActionResult Index()
         {
+            var employee = _context.Users.ToList();
             return View();
         }
 

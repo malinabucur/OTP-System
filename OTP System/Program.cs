@@ -1,4 +1,10 @@
+using EntityFramework;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddRazorPages();
+builder.Services.AddScoped<OtpsystemContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
