@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTP System", "OTP System\OTP System.csproj", "{9CA4DCB3-F77B-4988-8905-782AD1CCCCAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework", "EntityFramework\EntityFramework.csproj", "{A3B1270A-356E-4319-9630-14447FF66A06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9CA4DCB3-F77B-4988-8905-782AD1CCCCAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CA4DCB3-F77B-4988-8905-782AD1CCCCAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CA4DCB3-F77B-4988-8905-782AD1CCCCAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3B1270A-356E-4319-9630-14447FF66A06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B1270A-356E-4319-9630-14447FF66A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B1270A-356E-4319-9630-14447FF66A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B1270A-356E-4319-9630-14447FF66A06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
