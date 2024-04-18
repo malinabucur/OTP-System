@@ -1,9 +1,12 @@
+using BusinessLogic;
 using EntityFramework;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<Service>();
+builder.Services.AddSingleton<TOTP.TOTP>();
 builder.Services.AddScoped<OtpsystemContext>();
 
 // Add services to the container.

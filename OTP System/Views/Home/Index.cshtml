@@ -2,7 +2,112 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container bg-cover">
+    <div class="row">
+        <div class="col-4 border border-black p-2">
+            <div class="form-group p-2">
+                <label>OTP Code</label>
+                <input class="form-control is-invalid" id="totpInput" aria-describedby="emailHelp" placeholder="Enter OTP Code">
+                <div id="otpFeedback" class="invalid-feedback">Please enter a 6-digit OTP.</div>
+                <small id="emailHelp" class="form-text text-muted">Click Generate OTP Code to get your code.</small>
+            </div>
+            <div class="text-center">
+                <button id="submitOTP" type="button" class="btn btn-primary m-3" disabled>Submit</button>
+            </div>
+            @*<span class="input-group-text text-center" id="inputGroup-sizing-default">OTP Code</span>
+            <input id="totpInput" "type=" text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">*@
+        </div>
+        <div class="col-6 p-2 text-center">
+            <button id="otpButton" class="btn btn-primary">Generate OTP Code</button>
+        </div>
+    </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('#otpButton').on('click', function () {
+            runGetOTPEvery30Seconds();
+        });
+
+        $('#submitOTP').on('click', function () {
+            ValidateTOTP();
+        });
+
+        $('#totpInput').trigger('input');
+
+        $('#totpInput').on('input', function () {
+            // Get the value of the input field
+            var otpValue = $(this).val().trim();
+
+            // Check if the value is exactly 6 digits
+            var isValid = /^\d{6}$/.test(otpValue);
+
+            if (isValid) {
+                $('#otpFeedback').removeClass('invalid-feedback').addClass('valid-feedback').text('Looks good!');
+            } else {
+                $('#otpFeedback').removeClass('valid-feedback').addClass('invalid-feedback').text('Please enter a 6-digit OTP.');
+            }
+            // Enable or disable the submit button based on validation result
+            if (isValid) {
+                $(this).removeClass('is-invalid').addClass('is-valid');
+            } else {
+                $(this).removeClass('is-valid').addClass('is-invalid');
+            }
+            $('#submitOTP').prop('disabled', !isValid);
+        });
+    });
+    function runGetOTPEvery30Seconds() {
+        // Call GetOTP() initially
+        GetOTP();
+
+        // Set interval to call GetOTP() every 10 seconds
+        setInterval(function () {
+            GetOTP();
+        }, 30000); // 10000 milliseconds = 10 seconds
+    }
+    function GetOTP() {
+        $.ajax({
+
+            url: '@Url.Action("GenerateTOTP", "Home")',
+            // Type of Request
+            type: "POST",
+            data: { id: 1 },
+            success: function (data) {
+                let x = JSON.stringify(data);
+                var otpCode = "OTP CODE: " + data['value'];
+                SuccessToast(1, otpCode);
+            },
+            // Error handling
+            error: function (error) {
+                console.log(`Error ${error}`);
+            }
+        });
+    }
+
+    function ValidateTOTP() {
+
+        var x = $('#totpInput').val();
+        $.ajax({
+
+            url: '@Url.Action("ValidateTOTP", "Home")',
+            // Type of Request
+            type: "POST",
+            data: {
+                totp: x,
+                userId: 1
+            },
+            success: function (data) {
+                if (data['success'] == true) {
+                    window.location.href = '@Url.Action("LoggedIn", "Home")';
+                }
+                else {
+                    ErrorToast(data['message'], data['message']);
+                }
+            },
+            // Error handling
+            error: function (error) {
+                console.log(`Error ${error}`);
+            }
+        });
+    }
+</script>
