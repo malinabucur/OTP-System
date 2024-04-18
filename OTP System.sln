@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OTP System", "OTP System\OTP System.csproj", "{9CA4DCB3-F77B-4988-8905-782AD1CCCCAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OTP System", "OTP System\OTP System.csproj", "{9CA4DCB3-F77B-4988-8905-782AD1CCCCAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework", "EntityFramework\EntityFramework.csproj", "{A3B1270A-356E-4319-9630-14447FF66A06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFramework", "EntityFramework\EntityFramework.csproj", "{A3B1270A-356E-4319-9630-14447FF66A06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TOTP", "TOTP\TOTP.csproj", "{FF97D3A3-3EC0-4E26-855B-F1EB742BECF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "Service\BusinessLogic.csproj", "{AD303AF2-9D72-4D31-9B88-3608A786B766}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{728AD092-4BBC-40C0-BF7E-B5677C27905C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{A3B1270A-356E-4319-9630-14447FF66A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3B1270A-356E-4319-9630-14447FF66A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3B1270A-356E-4319-9630-14447FF66A06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF97D3A3-3EC0-4E26-855B-F1EB742BECF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF97D3A3-3EC0-4E26-855B-F1EB742BECF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF97D3A3-3EC0-4E26-855B-F1EB742BECF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF97D3A3-3EC0-4E26-855B-F1EB742BECF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD303AF2-9D72-4D31-9B88-3608A786B766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD303AF2-9D72-4D31-9B88-3608A786B766}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD303AF2-9D72-4D31-9B88-3608A786B766}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD303AF2-9D72-4D31-9B88-3608A786B766}.Release|Any CPU.Build.0 = Release|Any CPU
+		{728AD092-4BBC-40C0-BF7E-B5677C27905C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{728AD092-4BBC-40C0-BF7E-B5677C27905C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{728AD092-4BBC-40C0-BF7E-B5677C27905C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{728AD092-4BBC-40C0-BF7E-B5677C27905C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
