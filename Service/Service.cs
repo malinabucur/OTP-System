@@ -16,7 +16,6 @@ namespace BusinessLogic
         {
             _context = otpsystemContext;
             _totp = totp;
-
         }
 
         public string GetOtpCode(long id)
