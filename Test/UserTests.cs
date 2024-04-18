@@ -18,7 +18,7 @@ namespace Test
             // Arrange
             var mockContext = new Mock<OtpsystemContext>();
             var mockTotp = new Mock<TOTP.TOTP>();
-            var userService = new Service(mockContext.Object, mockTotp.Object);
+            var service = new Service(mockContext.Object, mockTotp.Object);
 
             var users = new[]
             {
@@ -29,7 +29,7 @@ namespace Test
             mockContext.Setup(c => c.Users).Returns(MockDbSet(users));
 
             // Act
-            var user = userService.GetUserById(2);
+            var user = service.GetUserById(2);
 
             // Assert
             Assert.IsNotNull(user);
@@ -44,7 +44,7 @@ namespace Test
             // Arrange
             var mockContext = new Mock<OtpsystemContext>();
             var mockTotp = new Mock<TOTP.TOTP>();
-            var userService = new Service(mockContext.Object, mockTotp.Object);
+            var service = new Service(mockContext.Object, mockTotp.Object);
 
             var users = new[]
             {
@@ -54,7 +54,7 @@ namespace Test
             }.AsQueryable();
             mockContext.Setup(c => c.Users).Returns(MockDbSet(users));
             // Act
-            var user = userService.GetUserById(100); // Assuming 100 is a non-existent user ID
+            var user = service.GetUserById(100); // Assuming 100 is a non-existent user ID
 
             // Assert
             Assert.IsNull(user);
