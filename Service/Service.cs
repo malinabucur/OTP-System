@@ -1,12 +1,8 @@
 ﻿using EntityFramework;
 using EntityFramework.Models;
-using Microsoft.IdentityModel.Protocols;
 using OtpNet;
-using System.Configuration;
-using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
-using TOTP;
 
 namespace BusinessLogic
 {
