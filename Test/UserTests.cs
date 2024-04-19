@@ -22,9 +22,9 @@ namespace Test
 
             var users = new[]
             {
-                new User { UserId = 1, Username = "user1", Email = "user1@example.com", PasswordHash = "hash1", SecretKey = "secret1" },
-                new User { UserId = 2, Username = "user2", Email = "user2@example.com", PasswordHash = "hash2", SecretKey = "secret2" },
-                new User { UserId = 3, Username = "user3", Email = "user3@example.com", PasswordHash = "hash3", SecretKey = "secret3" }
+                new User { UserId = 1, Username = "user1", Email = "user1@example.com", PasswordHash = "hash1" },
+                new User { UserId = 3, Username = "user3", Email = "user3@example.com", PasswordHash = "hash3" },
+                new User { UserId = 2, Username = "user2", Email = "user2@example.com", PasswordHash = "hash2" },
             }.AsQueryable();
             mockContext.Setup(c => c.Users).Returns(MockDbSet(users));
 
@@ -48,14 +48,14 @@ namespace Test
 
             var users = new[]
             {
-                new User { UserId = 1, Username = "user1", Email = "user1@example.com", PasswordHash = "hash1", SecretKey = "secret1" },
-                new User { UserId = 2, Username = "user2", Email = "user2@example.com", PasswordHash = "hash2", SecretKey = "secret2" },
-                new User { UserId = 3, Username = "user3", Email = "user3@example.com", PasswordHash = "hash3", SecretKey = "secret3" }
+                new User { UserId = 1, Username = "user1", Email = "user1@example.com", PasswordHash = "hash1" },
+                new User { UserId = 2, Username = "user2", Email = "user2@example.com", PasswordHash = "hash2" },
+                new User { UserId = 3, Username = "user3", Email = "user3@example.com", PasswordHash = "hash3" }
             }.AsQueryable();
             mockContext.Setup(c => c.Users).Returns(MockDbSet(users));
             // Act
             // Assuming 100 is a non-existent user ID
-            var user = service.GetUserById(100); 
+            var user = service.GetUserById(100);
 
             // Assert
             Assert.IsNull(user);

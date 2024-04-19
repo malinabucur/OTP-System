@@ -33,18 +33,11 @@ public partial class OtpsystemContext : DbContext
             entity.HasIndex(e => e.Email, "UQ__Users__A9D105344DD4463D").IsUnique();
 
             entity.Property(e => e.UserId).HasColumnName("UserID");
-            entity.Property(e => e.CreatedAt)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime");
             entity.Property(e => e.Email)
                 .HasMaxLength(100)
                 .IsUnicode(false);
-            entity.Property(e => e.IsActive).HasDefaultValueSql("((1))");
             entity.Property(e => e.PasswordHash)
                 .HasMaxLength(255)
-                .IsUnicode(false);
-            entity.Property(e => e.SecretKey)
-                .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Username)
                 .HasMaxLength(50)
