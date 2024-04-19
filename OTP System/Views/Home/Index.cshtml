@@ -101,7 +101,7 @@
                     window.location.href = '@Url.Action("LoggedIn", "Home")';
                 }
                 else {
-                    ErrorToast(data['message'], data['message']);
+                    ErrorToast(data['message'], data['message'], "Error!", 5);
                 }
             },
             // Error handling

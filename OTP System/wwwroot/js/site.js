@@ -1,4 +1,4 @@
-﻿function CreateToast(toastId, header, message, icon, isAlert = false, isError = false, delay = 30000, containerId = "toast_wrapper") {
+﻿function CreateToast(toastId, header, message, icon, isAlert = false, isError = false, delay = 30, containerId = "toast_wrapper") {
     $("#" + toastId).remove();
 
     var toast = $("<div style='z-index: 11'></div>");
@@ -30,11 +30,10 @@
 
     $("#" + containerId).append(toast);
 
-    var timesRun = 30;
     var interval = setInterval(function () {
-        timesRun -= 1;
-        toastHeader.find("#timer").text(timesRun + "s left");
-        if (timesRun === 0) {
+        delay -= 1;
+        toastHeader.find("#timer").text(delay + "s left");
+        if (delay === 0) {
             clearInterval(interval); // Clear the interval
             toast.fadeOut(400, function () {
                 toast.remove(); // Remove the toast after fade out
@@ -45,10 +44,10 @@
     toast.toast("show");
 }
 
-function SuccessToast(toastId, message, header = "Success!") {
-    CreateToast(toastId, header, message, "");
+function SuccessToast(toastId, message, header = "Success!", delay) {
+    CreateToast(toastId, header, message, "", false, false, delay);
 }
 
-function ErrorToast(toastId, message, header = "Error!") {
-    CreateToast(toastId, header, message, "" ,false, true);
+function ErrorToast(toastId, message, header = "Error!", delay) {
+    CreateToast(toastId, header, message, "", false, true, delay);
 }
