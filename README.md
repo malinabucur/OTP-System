@@ -10,7 +10,7 @@
 ![image](https://github.com/malinabucur/OTP-System/assets/109577091/97ea7964-68aa-4968-a8b4-10e6e8130965)
 * When clicking on generate OTP code, the code will be displayed in the right bottom corner in a toast message:
 ![image](https://github.com/malinabucur/OTP-System/assets/109577091/3b15808f-9d6b-46e8-be87-2f92fc9ace24)
-* If a valid OTP code is entered in the input field:
+* If a valid OTP code is entered in the input field:                                                    
 ![image](https://github.com/malinabucur/OTP-System/assets/109577091/54239657-5775-4227-aa33-169d13109b6b)
 * If the OTP codes matches, the user will be redirected to:
 ![image](https://github.com/malinabucur/OTP-System/assets/109577091/9cfceb35-bae8-4904-81e9-c85cab18d61f)
@@ -24,5 +24,7 @@
 ## Technical requirements fulfilles:
 * The solution is a web application developed with the latest .NET framework.
 * For the frontend part I used JavaScript, HTML and CSS, along with Bootstrap for the styling part. 
-* Unit tests were performed.
-* I used MVC architecture and SSMS for database.  
+* Unit tests were performed - I used NUnit.
+* I used MVC architecture.
+* For databse I used SQL Server Management Studio (SSMS).
+* I used Entity Framework to work with relational data.
