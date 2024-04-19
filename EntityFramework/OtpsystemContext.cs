@@ -19,7 +19,6 @@ public partial class OtpsystemContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     // comment this when using in memory db for testing
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.UseSqlServer("Server=.;Database=OTPSystem;Trusted_Connection=True;TrustServerCertificate=True;Encrypt=False");
 

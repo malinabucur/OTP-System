@@ -14,7 +14,6 @@ namespace TOTP
 
             return totp;
         }
-
         public string GenerateOTPCode(Totp otp)
         {
             var totpCode = otp.ComputeTotp(DateTime.UtcNow);

@@ -15,8 +15,6 @@
             <div class="text-center">
                 <button id="submitOTP" type="button" class="btn btn-primary m-3" disabled>Submit</button>
             </div>
-            @*<span class="input-group-text text-center" id="inputGroup-sizing-default">OTP Code</span>
-            <input id="totpInput" "type=" text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">*@
         </div>
         <div class="col-6 p-2 d-flex justify-content-center align-items-center">
             <button id="otpButton" class="btn btn-primary">Generate OTP Code</button>
@@ -61,10 +59,9 @@
         // Call GetOTP() initially
         GetOTP();
 
-        // Set interval to call GetOTP() every 10 seconds
         setInterval(function () {
             GetOTP();
-        }, 30000); // 10000 milliseconds = 10 seconds
+        }, 30000); 
     }
     function GetOTP() {
         $.ajax({

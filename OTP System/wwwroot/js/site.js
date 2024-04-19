@@ -34,9 +34,11 @@
         delay -= 1;
         toastHeader.find("#timer").text(delay + "s left");
         if (delay === 0) {
-            clearInterval(interval); // Clear the interval
+            // Clear the interval
+            clearInterval(interval); 
             toast.fadeOut(400, function () {
-                toast.remove(); // Remove the toast after fade out
+                // Remove the toast after fade out
+                toast.remove(); 
             });
         }
     }, 1000);

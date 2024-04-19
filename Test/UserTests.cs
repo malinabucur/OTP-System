@@ -54,7 +54,8 @@ namespace Test
             }.AsQueryable();
             mockContext.Setup(c => c.Users).Returns(MockDbSet(users));
             // Act
-            var user = service.GetUserById(100); // Assuming 100 is a non-existent user ID
+            // Assuming 100 is a non-existent user ID
+            var user = service.GetUserById(100); 
 
             // Assert
             Assert.IsNull(user);
