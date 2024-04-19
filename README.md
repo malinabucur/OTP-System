@@ -15,13 +15,14 @@
 * If the OTP codes matches, the user will be redirected to:
 ![image](https://github.com/malinabucur/OTP-System/assets/109577091/9cfceb35-bae8-4904-81e9-c85cab18d61f)
 * If the entered OTP code is invalid, an error toast message will be displayed and visible for 5 seconds:
-![image](https://github.com/malinabucur/OTP-System/assets/109577091/56f86fb0-9fbb-4a68-a26c-22a7c5e4e1f0)
-* The input field expects only digits, if not, the Submit button is disabled:
+![image](https://github.com/malinabucur/OTP-System/assets/109577091/5b7e2bee-2edb-41b8-aaae-9f050a22133f)
+* The input field expects only digits, if not, the Submit button is disabled, same if we don't type exactly 6-digits:
 ![image](https://github.com/malinabucur/OTP-System/assets/109577091/6414eb9e-74f3-4ca6-a31f-d8ab093833e6)
-
+![image](https://github.com/malinabucur/OTP-System/assets/109577091/3e9c2e25-a15d-4f61-ba67-40b01841a3a5)
 
 
 ## Technical requirements fulfilles:
 * The solution is a web application developed with the latest .NET framework.
 * For the frontend part I used JavaScript, HTML and CSS, along with Bootstrap for the styling part. 
-* Unit tests were performed. 
+* Unit tests were performed.
+* I used MVC architecture and SSMS for database.  
