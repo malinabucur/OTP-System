@@ -21,7 +21,7 @@
 ![image](https://github.com/malinabucur/OTP-System/assets/109577091/3e9c2e25-a15d-4f61-ba67-40b01841a3a5)
 
 
-## Technical requirements fulfilles:
+## Technical requirements fulfilled:
 * The solution is a web application developed with the latest .NET framework.
 * For the frontend part I used JavaScript, HTML and CSS, along with Bootstrap for the styling part. 
 * Unit tests were performed - I used NUnit.
